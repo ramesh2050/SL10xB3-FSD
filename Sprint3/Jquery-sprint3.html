@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>241791 FSD Sprint-3 Jquery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+<meta http-equiv="X-UA-Compatible" content="IE=11;" />
+
+
+<head>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<header>
+
+</header>
+<body>
+
+<div id="div1">
+</div>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="animate">Animate</button>
+</body>
+<script>
+$(document).ready(()=>{
+var para= document.createElement("p");
+var node= document.createTextNode("This page is created using ready function.click on show/hide");
+para.appendChild(node);
+var element =document.getElementById("div1");
+element.appendChild(para);
+$("#hide").click(()=>{
+$("#div1").hide(()=>{alert("Hide call back is called");});
+});
+$("#show").click(()=>{
+$("#div1").show();
+});
+$("#animate").click(()=>{
+ var div = $("#div1");
+    div.animate({height: '300px', opacity: '0.4'}, "slow");
+    div.animate({width: '300px', opacity: '0.8'}, "slow");
+    div.animate({height: '100px', opacity: '0.4'}, "slow");
+    div.animate({width: '100px', opacity: '0.8'}, "slow");
+});
+}) 
+</script>
+</html>
